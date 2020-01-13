@@ -1,0 +1,12 @@
+BIN = modelViewer
+CC = clang++
+FLAGS = -DAPPLE -Wall -pedantic -mmacosx-version-min=10.9 -fmessage-length=0 -UGLFW_CDECL -fprofile-arcs -ftest-coverage
+INC = -I../common/include -I/sw/include -I/usr/local/include
+LIB_PATH = ../common/osx_64/
+LOC_LIB = $(LIB_PATH)libglfw.3.1.dylib
+FRAMEWORKS = -framework Cocoa -framework OpenGL -framework IOKit
+SRC = ../*.cpp ../shaders/*.cpp ../meshloader/*.cpp ../scenes/*.cpp ../shapes/*.cpp
+
+all:
+	${CC} ${FLAGS} ${FRAMEWORKS} -o ${BIN} ${SRC} ${INC} ${LOC_LIB}
+	rm -f *.gcda *.gcno *.o	
