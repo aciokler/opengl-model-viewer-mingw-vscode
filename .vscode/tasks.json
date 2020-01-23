@@ -12,12 +12,19 @@
         {
             "label": "link",
             "type": "shell",
-            "command": "g++ -o Make/viewer.exe *.o -lglfw3 -lopengl32 -lgdi32",
+            "command": "g++ -o bin/viewer.exe *.o -lglfw3 -lopengl32 -lgdi32",
+            "group": "build",
+            "dependsOn":["compile"]
+        },
+        {
+            "label": "delete compiled sources",
+            "type": "shell",
+            "command": "DEL *.o",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "dependsOn":["compile"]
+            "dependsOn":["link"]
         }
     ]
 }

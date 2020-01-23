@@ -34,7 +34,7 @@ Window::Window( GLint width, GLint height, std::string windowTitle )
     gladLoadGLLoader((GLADloadproc) glfwGetProcAddress); // add GLAD init
     std::cout << glGetString(GL_VERSION) << std::endl;
     std::cout << glGetString(GL_VENDOR) << std::endl;
-    std::cout << glGetString(GL_RENDERER) << std::endl;
+    std::cout << glGetString(GL_RENDERER) << std::endl; 
     
     // disable cursor and set mouse in center view...
     glfwSetInputMode(handle, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
